@@ -115,3 +115,15 @@
         width: 250px;
     }
 }
+@media(max-width:500px){
+    .product{
+        flex-direction: column;
+    }
+    .color_buttons{
+        width: 130px;
+
+    }
+    .price_buttons{
+        width: 277px;
+    }
+}

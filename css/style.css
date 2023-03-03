@@ -218,41 +218,42 @@
 .burer_a:hover{
     text-decoration: underline;
 }
+.burger{
+    display: flex;
+    position: fixed;
+    top: 1%;
+    right: 3%;
+    cursor: pointer;
+    z-index: 99;
+    background: none;
+    flex-direction:column ;
+}
+.burggerLine{
+    width: 30px;
+    height: 4px;
+    background-color: #121111;
+    margin: 2px 0;
+    border-radius: 20px;
+    transition: 300ms;
+}
+.burggerLineActiv{
+    transition: 300ms;
+
+}
+.burggerLineActiv:nth-child(1){
+    transform:translateY(8px) rotate(45deg);
+
+}
+.burggerLineActiv:nth-child(2){
+    display: none;
+    
+}
+.burggerLineActiv:nth-child(3){
+    /* transform:translateY(-0.5px); */
+    transform: rotate(-45deg);
+}
 @media(max-width:710px){
-    .burger{
-        display: flex;
-        position: fixed;
-        top: 1%;
-        right: 3%;
-        cursor: pointer;
-        z-index: 99;
-        background: none;
-        flex-direction:column ;
-    }
-    .burggerLine{
-        width: 30px;
-        height: 4px;
-        background-color: #121111;
-        margin: 2px 0;
-        border-radius: 20px;
-        transition: 300ms;
-    }
-    .burggerLineActiv{
-        transition: 300ms;
 
-    }
-    .burggerLineActiv:nth-child(1){
-        transform:translateY(8px) rotate(45deg);
-
-    }
-    .burggerLineActiv:nth-child(2){
-        display: none;
-        
-    }
-    .burggerLineActiv:nth-child(3){
-        /* transform:translateY(-0.5px); */
-        transform: rotate(-45deg);
-    }
     .shop{
         padding-top: 50px;
     }

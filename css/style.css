@@ -10,6 +10,10 @@
     margin: 0 auto;
     padding: 0 10px;
 }
+.container_not-activ{
+    height: 100vh;
+    overflow-y: hidden;
+}
 .shop{
     width: 100%;
     display: flex;
@@ -40,6 +44,13 @@
     display: flex;
     align-items: center;
     gap: 76px;
+}
+.priceOf{
+    cursor: pointer;
+    transition: 400ms;
+}
+.product_img{
+    transition: 400ms;
 }
 .product_text{
     display: flex;
@@ -75,6 +86,10 @@
 .cl_bt-2:hover{
     border: 1px solid rgb(91, 228, 91);
 }
+.burger{
+    display: none;
+}
+
 .price_buttons{
     width: 321px;
     height: 57px;
@@ -101,10 +116,146 @@
     font-size: 14px;
     line-height: 17px;
 }
+.modal_not-activ{
+    display: none;
+}
+.modal{
+    left: 0;
+    top:0;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.47);
+    backdrop-filter: blur(2px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.modal_window{
+    max-width: 592px;
+    height: 388px;
+    background-color: white;
+    padding: 60px 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+    position: relative;
+}
+.modl_h3{
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 44px;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.form_input{
+    width: 420px;
+    height: 48px;
+    background: #DADADA;
+    border: none;
+    outline: none;
+    padding: 8px;
+    border-radius: 5px;
+}
+.form_button{
+    width: 420px;
+    height: 48px;
+    background: #0094FF;
+    border: none;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.modal_x{
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    cursor: pointer;
+}
 
-
-
+.burger_section{
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(18, 17, 17,80%);
+    backdrop-filter: blur(2px);
+    position: fixed;
+    top: 0;
+    right: -100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 0;
+    transition: 400ms;
+}
+.burger_sectionActiv{
+    right: 0;
+}
+.burger_h3{
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 44px;
+    background: none;
+    transition: 400ms;
+    color: rgb(216, 216, 58);
+}
+.burer_a{
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 25px;
+    background: none;
+    text-decoration: none;
+    color: #FFFFFF;
+    font-family: 'Poppins';
+    margin: 5px 0;
+}
+.burer_a:hover{
+    text-decoration: underline;
+}
 @media(max-width:710px){
+    .burger{
+        display: flex;
+        position: fixed;
+        top: 1%;
+        right: 3%;
+        cursor: pointer;
+        z-index: 99;
+        background: none;
+        flex-direction:column ;
+    }
+    .burggerLine{
+        width: 30px;
+        height: 4px;
+        background-color: #121111;
+        margin: 2px 0;
+        border-radius: 20px;
+        transition: 300ms;
+    }
+    .burggerLineActiv{
+        transition: 300ms;
+
+    }
+    .burggerLineActiv:nth-child(1){
+        transform:translateY(8px) rotate(45deg);
+
+    }
+    .burggerLineActiv:nth-child(2){
+        display: none;
+        
+    }
+    .burggerLineActiv:nth-child(3){
+        /* transform:translateY(-0.5px); */
+        transform: rotate(-45deg);
+    }
+    .shop{
+        padding-top: 50px;
+    }
     .h1{
         font-size: 38px;
     }
@@ -114,10 +265,22 @@
     .product_img{
         width: 250px;
     }
+    .modal_window{
+        height: 300px;
+        padding: 25px 30px;
+        gap: 25px;
+    }
+    .form_input{
+        width: 320px;
+    }
+    .form_button{
+        width: 320px;
+    }
+
 }
 @media(max-width:500px){
     .shop{
-        padding: 10px 0 10px 0;
+        padding: 30px 0 10px 0;
     }
     .h1{
         font-size: 30px;
@@ -142,5 +305,20 @@
     }
     .price_buttons{
         width: 277px;
+    }
+    .modal_window{
+        height: 280px;
+        padding: 25px 20px;
+        gap: 15px;
+    }
+    .form_input{
+        width: 250px;
+    }
+    .form_button{
+        width: 250px;
+    }
+    .modal_x{
+        top: 8px;
+        right: 10px;
     }
 }

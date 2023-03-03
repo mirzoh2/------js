@@ -55,3 +55,37 @@ for(let e of price){
 
 btn2.addEventListener('click', change_img1)//Фукция для измены картины и кнопки
 btn1.addEventListener('click', change_img2)
+
+let modal_window = doc.querySelector('.modal_not-activ')
+let modal_x = doc.querySelector('.modal_x')
+let container = doc.querySelector('.container')
+let burger = doc.querySelector('.burger')
+let burger_line = doc.querySelectorAll('.burggerLine')
+let burger_section = doc.querySelector('.burger_section')
+
+let modal = () =>{
+    modal_window.classList.toggle('modal')//добавляю класс при клике
+    if (modal_window.classList.contains('modal')) {//Модалка активна скрол бади исчезает
+        doc.body.style.overflow = 'hidden'
+    }else if(modal_window.classList.contains('modal_not-activ')){//Когда модалка не активна возвращаю скрол
+        doc.body.style.overflow = 'auto'
+    }
+}
+
+let burgerActiv = () =>{
+    for(let line of burger_line){
+        line.classList.toggle('burggerLineActiv')//Меняю класс на бургере что бы изменить стиль
+    }
+    burger_section.classList.toggle('burger_sectionActiv')
+    if (burger_section.classList.contains('burger_sectionActiv')) {
+        doc.body.style.overflow = 'hidden'
+    }else if(burger_section.classList.contains('burger_section')){
+        doc.body.style.overflow = 'auto'
+    }
+}
+
+burger.addEventListener('click', burgerActiv)
+
+priceOf.addEventListener('click', modal)
+
+modal_x.addEventListener('click', modal)

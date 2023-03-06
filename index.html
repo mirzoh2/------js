@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+/>
     <title>Document</title>
 </head>
 <body>
@@ -19,7 +23,19 @@
             <h1 class="h1">Supercharged for pros.</h1>
             <p class="p">The most powerful MacBook Pro ever is here. With the blazing-fast M1 Pro or M1 Max chip — the first Apple silicon designed for pros — you get groundbreaking performance and amazing battery life. Add to that a stunning Liquid Retina XDR display, the best camera and audio ever in a Mac notebook, and all the ports you need. The first notebook of its kind, this MacBook Pro is a beast.</p>
             <div class="product">
-                <img src="./img/mac_2.svg" alt="" class="product_img">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <img src="./img/mac_2.svg" />
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="./img/mac_1.svg" />
+                      </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                  </div>
                 <div class="product_text">
                     <h1 class="h1">Macbook Pro</h1>
                     <span class="span">White</span>
@@ -51,7 +67,7 @@
         </div>
         <div class="modal_not-activ">
             <div class="modal_window">
-                <img src="./img/x (1) 1.svg" alt="" class="modal_x">
+                <img onclick="" src="./img/x (1) 1.svg" alt="" class="modal_x">
                 <h3 class="modl_h3">Оставить заявку</h3>
                 <form class="form">
                     <input class="form_input" type="text" placeholder="Your name">
@@ -63,12 +79,13 @@
     </div>
     <div class="burger_section">
         <h3 class="burger_h3">Menu</h3>
-        <a href="" class="burer_a">Главная страница</a>
-        <a href="" class="burer_a">Главная страница</a>
-        <a href="" class="burer_a">Главная страница</a>
-        <a href="" class="burer_a">Главная страница</a>
-        <a href="" class="burer_a">Главная страница</a>
+        <a href="#" class="burer_a">Главная страница</a>
+        <a href="#" class="burer_a">Главная страница</a>
+        <a href="#" class="burer_a">Главная страница</a>
+        <a href="#" class="burer_a">Главная страница</a>
+        <a href="#" class="burer_a">Главная страница</a>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script src="./js/script.js"></script>
 </body>
 </html>

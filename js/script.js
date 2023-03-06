@@ -6,19 +6,22 @@ let span = doc.querySelector('.span')
 let img = doc.querySelector('.product_img')
 let price = doc.querySelectorAll('.price_buttons')
 let priceOf = doc.querySelector('.priceOf')
-
+let colSlid = doc.querySelectorAll('.swiper-slide')
+let swipeWrap = doc.querySelector('.swiper-wrapper')
 let img1 = './img/mac_1.svg'//Достаю картины
 let img2 = './img/mac_2.svg'
 
 
 let change_img1 = () =>{//Функция при которой меняется картинка путем смены src и меняю классы обоим кнопкам
-    img.src = img1
+    colSlid[1].classList = 'swiper-slide swiper-slide-visible swiper-slide-active'
+    colSlid[0].classList = 'swiper-slide swiper-slide-prev'
     btn1.className = 'color_buttons cl_bt-2'
     btn2.className = 'color_buttons cl_bt-1'
     span.textContent = 'Space Grey'
+    
 }
 let change_img2 = () =>{
-    img.src = img2
+   
     btn2.className = 'color_buttons cl_bt-2'
     btn1.className = 'color_buttons cl_bt-1'
     span.textContent = 'White'
@@ -52,7 +55,6 @@ for(let e of price){
 }
 
 
-
 btn2.addEventListener('click', change_img1)//Фукция для измены картины и кнопки
 btn1.addEventListener('click', change_img2)
 
@@ -71,6 +73,11 @@ let modal = () =>{
         doc.body.style.overflow = 'auto'
     }
 }
+doc.body.addEventListener('keyup', (event)=>{
+    if (event.keyCode == 27) {
+        modal_window.className = 'modal_not-activ'
+    }
+})
 
 let burgerActiv = () =>{
     for(let line of burger_line){
@@ -83,6 +90,31 @@ let burgerActiv = () =>{
         doc.body.style.overflow = 'auto'
     }
 }
+
+
+
+var swiper = new Swiper(".mySwiper", {
+    effect: "cube",
+    grabCursor: true,
+    cubeEffect: {
+      shadow: true,
+      slideShadows: true,
+      shadowOffset: 20,
+      shadowScale: 0.94,
+    },
+    keyboard: {
+        enabled: true,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+    },
+        navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+
+    
+});
 
 burger.addEventListener('click', burgerActiv)
 

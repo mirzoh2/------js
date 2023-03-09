@@ -13,15 +13,14 @@ let img2 = './img/mac_2.svg'
 
 
 let change_img1 = () =>{//Функция при которой меняется картинка путем смены src и меняю классы обоим кнопкам
-    colSlid[1].classList = 'swiper-slide swiper-slide-visible swiper-slide-active'
-    colSlid[0].classList = 'swiper-slide swiper-slide-prev'
+    swiper.slideNext(200, true)
     btn1.className = 'color_buttons cl_bt-2'
     btn2.className = 'color_buttons cl_bt-1'
     span.textContent = 'Space Grey'
     
 }
 let change_img2 = () =>{
-   
+    swiper.slidePrev(200, true)
     btn2.className = 'color_buttons cl_bt-2'
     btn1.className = 'color_buttons cl_bt-1'
     span.textContent = 'White'
@@ -112,9 +111,19 @@ var swiper = new Swiper(".mySwiper", {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },
-
-    
 });
+swiper.on('slideChange', function () {
+    console.log('slide changed');
+    if (btn1.className == 'color_buttons cl_bt-1') {
+        btn1.className = 'color_buttons cl_bt-2'
+        btn2.className = 'color_buttons cl_bt-1'
+        span.textContent = 'Space Grey'
+    }else if (btn2.className == 'color_buttons cl_bt-1') {
+        btn2.className = 'color_buttons cl_bt-2'
+        btn1.className = 'color_buttons cl_bt-1'
+        span.textContent = 'White'
+    }
+  });
 
 burger.addEventListener('click', burgerActiv)
 

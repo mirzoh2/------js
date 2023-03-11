@@ -255,17 +255,19 @@
     transform: rotate(-45deg);
 }
 
+
+
 .swiper {
     position: relative;
     max-width: 300px;
     height: 300px;
-    z-index: -1;
+
   }
 
   .swiper-slide {
     background-position: center;
     background-size: cover;
-    z-index: -1;
+    z-index: 1;
   }
 
   .swiper-slide img {
@@ -273,6 +275,21 @@
     width: 100%;
     z-index: -5;
   }
+  .swiper-button-next{
+    background: none;
+  }
+  .swiper-button-prev{
+    background: none;
+  }
+  .swiper-pagination{
+    
+    background: none;
+  }
+  .swiper-pagination-bullet{
+    width: 10px;
+    height: 10px;
+  }
+
 @media(max-width:710px){
 
     .shop{

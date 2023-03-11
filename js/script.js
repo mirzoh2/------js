@@ -13,14 +13,14 @@ let img2 = './img/mac_2.svg'
 
 
 let change_img1 = () =>{//Функция при которой меняется картинка путем смены src и меняю классы обоим кнопкам
-    swiper.slideNext(200, true)
+    swiper.slideNext(300, true)
     btn1.className = 'color_buttons cl_bt-2'
     btn2.className = 'color_buttons cl_bt-1'
     span.textContent = 'Space Grey'
     
 }
 let change_img2 = () =>{
-    swiper.slidePrev(200, true)
+    swiper.slidePrev(300, true)
     btn2.className = 'color_buttons cl_bt-2'
     btn1.className = 'color_buttons cl_bt-1'
     span.textContent = 'White'

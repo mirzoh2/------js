@@ -163,7 +163,7 @@ doc.addEventListener('scroll',()=>{//При скроле выдвигаю рек
 
 
 let deliteadd = () =>{//Функция для удаления рекламы
-    addvertise.style.transform = 'translateX(150%)'
+    addvertise.styletransform = 'translateX(150%)'
     setTimeout(() => {
         addvertise.style.display = 'none'
     }, 500);

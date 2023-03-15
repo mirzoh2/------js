@@ -91,7 +91,7 @@ let burgerActiv = () =>{
 }
 
 
-
+//Работа со свайперомв
 var swiper = new Swiper(".mySwiper", {
     effect: "cube",
     grabCursor: true,
@@ -113,7 +113,7 @@ var swiper = new Swiper(".mySwiper", {
       prevEl: '.swiper-button-prev',
     },
 });
-swiper.on('slideChange', function () {
+swiper.on('slideChange', function () {//При измене слайда изменяю цвета кнопок и картиншкт
     console.log('slide changed');
     if (btn1.className == 'color_buttons cl_bt-1') {
         btn1.className = 'color_buttons cl_bt-2'
@@ -125,6 +125,73 @@ swiper.on('slideChange', function () {
         span.textContent = 'White'
     }
   });
+
+  let icon = doc.querySelectorAll('.material-icons')
+  let addvertise = doc.querySelector('.add_wraper')
+  let conection = doc.querySelector('.conection')
+  let chenge_icon = () =>{//Анимация кнопки вызов и сообщение
+    icon[1].style = 'display:block;'
+    icon[2].style = 'display:none;'
+    setInterval(() => {
+        if (icon[1].style.display == 'block') {
+            icon[2].style = 'display:block;'
+            icon[1].style = 'display:none;'
+        }else if (icon[2].style.display == 'block') {
+            icon[1].style = 'display:block;'
+            icon[2].style = 'display:none;'
+        }
+    }, 2500);
+  }
+chenge_icon()
+
+let num = doc.querySelector('.num')
+let numP = doc.querySelector('.num-p')
+let i = 0; // глобальная переменная
+
+
+doc.addEventListener('scroll',()=>{//При скроле выдвигаю рекламу и через 30 сек удаляю автаматом
+    if (window.scrollY > 230) {
+        addvertise.style.transform = 'translateX(0%)'
+        
+        setTimeout(deliteadd, 30000)
+
+    };
+
+    
+})
+ 
+
+
+let deliteadd = () =>{//Функция для удаления рекламы
+    addvertise.styletransform = 'translateX(150%)'
+    setTimeout(() => {
+        addvertise.style.display = 'none'
+    }, 500);
+}
+
+let timer = setInterval(function() {//Функция для таймера
+    i++;
+    
+    if (i >= 0 && i < 16) {
+       
+        numP.textContent = i
+    }else if (i > 15) {
+        clearInterval(timer);
+        numP.style.display = 'none'
+        icon[0].style.display = 'block'
+        num.addEventListener('click', deliteadd)
+    }
+    console.log(i);
+
+}, 1000);
+
+
+
+
+
+
+
+
 
 burger.addEventListener('click', burgerActiv)
 

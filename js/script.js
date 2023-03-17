@@ -198,3 +198,6 @@ burger.addEventListener('click', burgerActiv)
 priceOf.addEventListener('click', modal)
 
 modal_x.addEventListener('click', modal)
+
+
+
